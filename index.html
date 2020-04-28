@@ -12,7 +12,7 @@
 
 <body>
 
-   <section>
+   <section id="buyarea">
       <div class="container">
          <div class="cart">
             <div class="col-md-12 col-lg-10 mx-auto">
@@ -71,12 +71,17 @@
                   </div>
                </div>
                <div class="col-md-12 pt-4 pb-4">
-                  <button type="button" class="btn btn-success check-out">Check Out</button>
+                  <button  type="button" id="checkout" class="btn btn-success check-out">Check Out</button>
                </div>
             </div>
          </div>
       </div>
    </section>
+   <div id="buyphn">
+      <h1>Thanks for purchasing iPhone!</h1>
+      <h3>Now it's Yours. 🙂</h3>
+   </div>
+  
 
    <script> 
       //plusBtn1 Handler
@@ -204,18 +209,15 @@
        
       })
        
+       //Chekbox Handler
 
-     
-       
+       const CheckBtn =document.getElementById("checkout");
+       CheckBtn.addEventListener("click",function(){
 
-      
-     
-
-
-      
-
-
-     
+          document.getElementById("buyarea").style.display="none";
+          document.getElementById("buyphn").style.display="block";
+          
+       })
       
    </script>
 </body>

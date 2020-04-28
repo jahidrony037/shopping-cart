@@ -53,3 +53,11 @@ body{
 	background-color: #2FBE70;
 	border: none;
 }
+#buyphn{
+	color: darkblue;
+	display: none;
+	margin: 100px 0;
+	padding: 60px 0;
+	text-align: center;
+
+}
