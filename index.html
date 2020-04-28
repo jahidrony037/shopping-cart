@@ -65,8 +65,8 @@
 
                      <div class="col-md-4 status">
                         <h5>$<span id="currentsubtotal">1278</span></h5>
-                        <h5>$0</h5>
-                        <h5>$1278</h5>
+                        <h5>$ <span id="currenttax">63.90</span></h5>
+                        <h5>$ <span id="currenttotal">1341.90</span> </h5>
                      </div>
                   </div>
                </div>
@@ -90,21 +90,60 @@
         const currentPhnprice =parseFloat(phnPrice);
         const finalphnPrice =currentPhnprice+1219;
         document.getElementById("phnPrice").innerText=finalphnPrice;
+
+        //subtotal handler
+
+        const casePrice =document.getElementById("casePrice").innerText;
+        const currentcasePrice=parseFloat(casePrice);
+        const newSubtotal =finalphnPrice + currentcasePrice;
+        document.getElementById("currentsubtotal").innerText=newSubtotal;
+
+        //Tax handler
+
+        const newTax =0.05*(finalphnPrice + currentcasePrice);
+        const currenttax =newTax.toFixed(2);
+        document.getElementById("currenttax").innerText=currenttax;
+
+        //Total Handler
+         const Tax =document.getElementById("currenttax").innerText;
+         const currenttotal =parseFloat(Tax);
+         const Total =( currenttotal+finalphnPrice + currentcasePrice);
+         document.getElementById("currenttotal").innerText=Total;
+
       })
 
          //minusBtn1 Handler
 
-      const minusBtn1 =document.getElementById("fasminus1");
-      minusBtn1.addEventListener("click",function () {
+         const minusBtn1 =document.getElementById("fasminus1");
+          minusBtn1.addEventListener("click",function () {
          const phnQuantity= document.getElementById("phnQuantity").value;
-        const currentphnQuantity = parseFloat(phnQuantity);
-        const phnCount =currentphnQuantity-1;
-        document.getElementById("phnQuantity").value=phnCount;
-        const phnPrice=document.getElementById("phnPrice").innerText;
-        const currentPhnprice =parseFloat(phnPrice);
-        const finalphnPrice =currentPhnprice-1219;
-        document.getElementById("phnPrice").innerText=finalphnPrice; 
+         const currentphnQuantity = parseFloat(phnQuantity);
+         const phnCount =currentphnQuantity-1;
+         document.getElementById("phnQuantity").value=phnCount;
+         const phnPrice=document.getElementById("phnPrice").innerText;
+         const currentPhnprice =parseFloat(phnPrice);
+         const finalphnPrice =currentPhnprice-1219;
+         document.getElementById("phnPrice").innerText=finalphnPrice; 
+
+        //subtotal Handler
+
+        const casePrice =document.getElementById("casePrice").innerText;
+        const currentcasePrice=parseFloat(casePrice);
+        const newSubtotal =-(-(finalphnPrice +currentcasePrice));
+        document.getElementById("currentsubtotal").innerText=newSubtotal;
+
+        //Tax Handler
+
+        const newTax =0.05*(-(-(finalphnPrice +currentcasePrice)));
+        const currenttax =newTax.toFixed(2);
+        document.getElementById("currenttax").innerText=currenttax;
         
+        //Total Handler
+
+         const Tax =document.getElementById("currenttax").innerText;
+         const currenttotal =parseFloat(Tax);
+         const Total =-(-(currenttotal+finalphnPrice + currentcasePrice));
+         document.getElementById("currenttotal").innerText=Total; 
       })
       //minusBtn2 Handler
 
@@ -117,7 +156,21 @@
       const casePrice =document.getElementById("casePrice").innerText;
       const currentcasePrice =parseFloat(casePrice);
       const finalcasePrice =currentcasePrice-59;
-      document.getElementById("casePrice").innerText=finalcasePrice;   
+      document.getElementById("casePrice").innerText=finalcasePrice;  
+
+      //subtotal Handler
+
+       const phnPrice=document.getElementById("phnPrice").innerText;
+        const currentPhnprice =parseFloat(phnPrice);
+        const newSubtotal =-(-(finalcasePrice+currentPhnprice));
+        document.getElementById("currentsubtotal").innerText=newSubtotal; 
+
+        //Total Handler
+
+        const Tax =document.getElementById("currenttax").innerText;
+         const currenttotal =parseFloat(Tax);
+         const Total =-(-(currenttotal+finalcasePrice + currentPhnprice));
+         document.getElementById("currenttotal").innerText=Total;
    
       })
 
@@ -133,6 +186,22 @@
         const currentcasePrice =parseFloat(casePrice);
         const finalcasePrice =currentcasePrice+59;
         document.getElementById("casePrice").innerText=finalcasePrice; 
+
+        //subtotal Handler
+
+        const phnPrice=document.getElementById("phnPrice").innerText;
+        const currentPhnprice =parseFloat(phnPrice);
+        const newSubtotal =finalcasePrice + currentPhnprice;
+        document.getElementById("currentsubtotal").innerText=newSubtotal;
+
+        //Total Handler
+
+         const Tax =document.getElementById("currenttax").innerText;
+         const currenttotal =parseFloat(Tax);
+         const Total =(currenttotal+finalcasePrice + currentPhnprice);
+         document.getElementById("currenttotal").innerText=Total;
+
+       
       })
        
 
